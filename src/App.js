@@ -4,14 +4,16 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./containers/Header";
 import ProductListing from "./containers/ProductListing";
 import ProductDetails from "./containers/ProductDetails";
+import ErrorPage from "./containers/ErrorPage";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header />
       <Routes>
         <Route path="/" element={<ProductListing />}></Route>
         <Route path="products/:productId" element={<ProductDetails />}></Route>
+        <Route path="*" element={<ErrorPage />}></Route>
       </Routes>
     </div>
   );
