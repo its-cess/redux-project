@@ -7,6 +7,8 @@ import {
   removeSelectedProduct
 } from "../redux/actions/productActions";
 
+import LoadingSpinner from "./LoadingSpinner";
+
 const ProductDetails = () => {
   const product = useSelector((state) => state.product);
   const { image, title, price, category, description } = product;
@@ -33,7 +35,7 @@ const ProductDetails = () => {
   return (
     <div className="ui grid container">
       {Object.keys(product).length === 0 ? (
-        <div>Loading...</div>
+        <LoadingSpinner />
       ) : (
         <div className="ui placeholder segment">
           <div className="ui two column stackable center aligned grid">
